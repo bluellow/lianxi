@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2017年2月28日 继承与布局</title>
+
+</head>
+<body>
+    <h1>块:</h1>
+    <p>div p ul ol li h1-h6 dl fieldset form hr pre able</p>
+    <h1>行内</h1>
+    <p>a img span i em b strong sub sup</p>
+    <h1>可继承属性：</h1>
+    <p>visibility，color,line-height,font,a是不继承color,font</p>
+    <h1>不可继承:</h1>>
+    <p>width,height，</p>
+
+
+    <h1>不可继承的主要原因是：对行内元素不起作用的属性</h1>
+    <p>width,height,text-indent padding-top padding-bottom text-align margin-top、margin-bottom</p>
+
+    <h1>a是特殊元素，a是特殊元素，a是特殊元素，</h1>
+
+
+
+
+
+    <div class="parent" style="border:1px solid #7dff51;color: #ff936a;line-height: 20px;text-align: left;text-indent:2em;">
+        这是父节点
+        <p class="child">
+            这是块状子节点1
+        </p>
+        <div>这是块状子节点2</div>
+        <span class="inlineChild" style="text-indent: 2em;">这是内联子节点</span>
+        <div>只是块状子节点</div>
+        <form action="">
+            aaaa
+        </form>
+        <a href="">bbb</a>
+        <p style="direction: rtl">你好吗</p>
+        <p style="direction: rtl">我很好啊</p>
+    </div>
+    <div style="border: 1px solid #0082CB"></div>
+    <span style="width: 500px;height: 100px;text-indent: 2em;padding-left: 100px;margin-top: 10px;">
+        对行内元素不起作用:width,height,text-indent padding-top padding-bottom text-align margin-top、margin-bottom
+    </span>
+</body>
+</html>

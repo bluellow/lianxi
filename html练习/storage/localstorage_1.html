@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localstorage</title>
+</head>
+<body>
+    <script src="../../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            if(typeof(Storage)!=="undefined"){
+                console.log("支持")
+            }else{
+                console.log("不支持")
+            }
+        });
+    </script>
+</body>
+</html>

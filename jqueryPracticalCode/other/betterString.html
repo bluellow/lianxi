@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如何最优化的字符串，使用堆栈数组连接字符串</title>
+</head>
+<body>
+<div id="arr"></div>
+<div id="obj"></div>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script>
+    var string = Array();
+    string.push("张三丰");
+    string.push("张三丰");
+    string.push("张三丰");
+    string.push("张三丰");
+    string.push("张三丰");
+    alert(string.join(""));
+
+    var arr=["张三","李四","黄五","赵六","贺八"];
+    var obj={name:"张三",age:22,gender:"男",country:"中国",city:"上海"};
+
+    $.each(arr,function (i,val) {
+        console.log(i ,val)
+        $("#arr").append("数组元素是" + this + "<br/>");//this只想为数组的值，
+        return (this!= "赵六")
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态加载外部文件</title>
+    <script src="../../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#logscontent").load("../../右侧.html",function(responseTxt,statusText,xhr){
+                    if(statusText == "success"){
+                        alert("外部内容加载成功");
+                    }
+                    if(statusText == "error"){
+                        alert("加载错误:"+xhr.status+":"+xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h2>网站日志</h2>
+    <button id="btn1" type="button">获得外部的内容</button>
+    用来放置服务器端文件的DIV
+    <div id="logscontent"></div>
+</body>
+</html>

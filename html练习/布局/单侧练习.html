@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>单侧练习(固定布局与流体布局)</title>
+<style type="text/css">
+	.clearfix{
+		zoom:1;
+	}
+
+	.clearfix:after{
+		content: "";
+		display: block;
+		clear:both;
+		visibility: hidden;
+		height: 0;
+		line-height:0;
+	}
+	/*流体布局*/
+	.div_l{
+		width: 200px;
+		float: left;
+	}
+	.div_r{
+		margin-left: 20px;
+	}
+	/*固定布局*/
+	.div_r_fixed{
+		width: 500px;
+		float: right;
+	}
+</style>
+</head>
+
+<body>
+	<div class="clearfix" >
+		<div class="div_l">
+			<img class="paper_bg" src="role_1.jpg" >
+		</div>
+		<div class="div_r">
+			<p>一個人的晚餐！茶泡飯！飯、飯、飯… 今日不減肥，先把病治好再說！ 我認真吃完這，燒就會退了吧？！ 開動啦~~~~~~~~~~~~~~~~~~</p>
+		</div>
+	</div>
+
+
+	<div class="div_l">
+		<img class="paper_bg" src="role_1.jpg" >
+	</div>
+	<div class="div_r_fixed">
+		<p>一個人的晚餐！茶泡飯！飯、飯、飯… 今日不減肥，先把病治好再說！ 我認真吃完這，燒就會退了吧？！ 開動啦~~~~~~~~~~~~~~~~~~</p>
+	</div>
+
+
+</body>
+</html>

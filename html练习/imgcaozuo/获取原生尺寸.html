@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script>
+    function getImageWidth(url,callback){
+        var img = new Image();
+        img.src = url;
+        // 如果图片被缓存，则直接返回缓存数据
+        if(img.complete){
+            callback(img.width, img.height);
+        }else{
+            // 完全加载完毕的事件
+            img.onload = function(){
+                callback(img.width, img.height);
+            }
+        }
+
+    }
+    $(document).ready(function () {
+        var imgSrc = $("#image").attr("src");
+        getImageWidth("../../image/role_1.jpg",function(w,h){
+            console.log({width:w,height:h});
+        });
+    });
+</script>
+</body>
+</html>

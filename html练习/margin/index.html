@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box{width: 1200px;margin: 0 auto;background: orange;}
+        .ul{overflow: hidden;margin-right: -20px;}
+        .li{width: 386.66px;height: 300px;margin-right: 20px; background: green;
+            float: left;}
+
+    </style>
+</head>
+<body>
+    <a href="http://www.imooc.com/learn/680">css margin视屏教程</a>
+    <h1>margin重叠通常特性</h1>
+    <p>1. block水平元素(不包括float和absolute)</p>
+    <p>2.不考了writin-mode,只发生在垂直方向</p>
+    <h1>margin重叠3种场景</h1>
+    <ul>
+        <li>1.相邻的兄弟元素</li>
+        <li>2.父级和第一个或最后一个重叠</li>
+        <li>3.空的block元素</li>
+    </ul>
+    <h2>父子margin重叠其他条件</h2>
+        <h3>margin-top重叠</h3>
+        <p>1.父元素非块状格式化上下文元素(如:1float,2border:1px solid #ff0 3overflow:hidder)</p>
+        <p>2.父元素没有border-top设置</p>
+        <p>3.父元素没有padding-top值设置</p>
+        <p>4/父元素和第一个子元素之间没有inline元素分隔(如：在父元素后面加&nbsp;)</p>
+
+        <h4>margin-bottom重叠</h4>
+        <p>1.父元素非块状格式化上下文元素(如:1float,2border:1px solid #ff0 3overflow:hidder)</p>
+        <p>2.父元素没有border-bottom设置</p>
+        <p>3.父元素没有padding-bottom值设置</p>
+        <p>4.父元素和第一个子元素之间没有inline元素分隔</p>
+        <p>5.父元素没有height,min-heigh,max-height</p>
+
+    <h2>重叠的计算规则</h2>
+    <p>1.正正取大值;</p>
+    <p>2.正负值相加;</p>
+    <p>3.负负最负值;</p>
+
+    <h1>margin负值定位应用</h1>
+    <p>1.margin负值下的两端对齐</p>
+    <div class="box">
+        <div class="ul">
+            <div class="li">列表1</div>
+            <div class="li">列表2</div>
+            <div class="li">列表3</div>
+        </div>
+    </div>
+    <p>2.margin复制下的等高对齐</p>
+    <p>3.margin负值下的两栏自适应布局</p>
+        <!--图片在右侧-->
+        <div style="background: #ff936a; overflow: hidden;width: 1200px;margin: 0 auto;">
+            <div style="float: left;width: 100%;">
+                <p style="margin-right: 170px;">动画电影《你的名字。》及衍生作品的男主角。住在东京中心的男高中生，每天都与朋友愉快地度日，
+                    课余打工挣钱。后来与宫水三叶交换身体后逐渐相知、相恋，并共同拯救了三叶居住的小镇。</p>
+            </div>
+            <img src="../../image/role_1.jpg" alt="" style="float: left;width:150px;margin-left: -150px;">
+        </div>
+        <!--图片在左侧-->
+        <br>
+        <div style="background: #7dff51;width: 1200px;margin: 0 auto;overflow: hidden;">
+            <img src="../../image/role_1.jpg" alt="" style="float: left;width: 150px;">
+            <p style="margin-left: 20px;">动画电影《你的名字。》及衍生作品的男主角。住在东京中心的男高中生，每天都与朋友愉快地度日，
+                课余打工挣钱。后来与宫水三叶交换身体后逐渐相知、相恋，并共同拯救了三叶居住的小镇。</p>
+        </div>
+
+
+
+</body>
+</html>

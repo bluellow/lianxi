@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4_3_2新增的details元素与summary元素</title>
+
+    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <script>
+//        function detail_ontoggle(detail){
+//            var $p = $("#p");
+//            $p.css({"visibility":"visible",})
+//        }
+        function detail_ontoggle(detail){
+            var p = document.getElementById('aap');
+            if(detail.open)
+                p.style.visibility="visible";
+            else
+                p.style.visibility="hidden";
+        }
+    </script>
+    <details id="detail1" ontoggle="detail_ontoggle(this)" style="cursor: pointer;">
+        <summary>精武风云</summary>
+        <p id="aap" style="visibility: hidden;">陈真(甄子丹 饰)当年为报杀父之仇，独闯虹口机场...（精武风云电影介绍）></p>
+    </details>
+
+
+</body>
+</html>

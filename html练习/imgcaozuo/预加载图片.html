@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预加载图片</title>
+</head>
+<body>
+<img src="img/aaa.png" alt="" style="width: 200px;height: 300px;">
+
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script>
+    //当图片无法显示时;替换文本
+    $(document).ready(function(){
+        $("img").error(function(){
+            $(this).attr({"src":"../../image/role_1.jpg"})
+        })
+    });
+
+</script>
+</body>
+</html>

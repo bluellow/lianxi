@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载网页文件内容并传递服务器端参数</title>
+    <script src="../../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $name = $("#parameters option:selected").val()
+               $('#logscontent').empty().load('loadWithParameters_server.php',{name : $name});
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h2>加载服务器端的参数描述</h2>
+    <label for="parameters"></label>
+    <select name="parameters" id="parameters" side="5">
+        <option value="1" selected ="selected">url</option>
+        <option value="2">data</option>
+        <option value="3">callback</option>
+    </select>
+    <br/>
+    <button id="btn1" type="button">获取参数描述</button>
+    <!--用来放置服务器端文件的div元素-->
+    <div id="logscontent"></div>
+</body>
+</html>
