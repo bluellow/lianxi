@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajaxScroll</title>
+</head>
+<body>
+    <div class="div_1" style="height:600px;width: 200px;background: lightblue;"></div>
+    <!--<input type="text" id="loaded_max">-->
+    <div id="loaded_max"></div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#loaded_max").val(50);
+            $(".div_1").click(function(){
+                console.log(document.body.clientHeight)
+                console.log(window.innerHeight)
+                console.log("win" + $(window).height());
+                console.log("doc" + $(document).height());
+            });
+        });
+        var loading = false;
+        $(window).scroll(function(){
+            //如果当前窗体的高度大于文档的高度
+            console.log($(window).scrollTop() );
+            console.log($(window).height());
+            console.log($(document).height());
+            if($(window).scrollTop() + $(window).height() + 250>=$(document).height()){
+                if(loading == false){
+                    loading = true;
+                    $("#loadingbar").css({"display":"block"});
+                    $.get("ajaxScroll_Server.php?start="+$("#loaded_max").val(),function(loaded){
+                        $('body').append(loaded);
+                        $("#loaded_max").val(parseInt($("#loaded_max").val())+50);
+                        $("#loadedbar").css({"display":"none"});
+                        loading = false;
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>
